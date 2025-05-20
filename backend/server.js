@@ -6,8 +6,9 @@ require('dotenv').config();
 const app = express();
 
 // Middlewares
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+app.use(cors({ origin: ['http://localhost:4200', 'https://frotend-m4m3.vercel.app'] }));
+app.use(express.json({ limit: '10mb' 
+}));
 
 // Rotas
 const ferramentaRoutes = require('./routes/ferramenta.routes');
