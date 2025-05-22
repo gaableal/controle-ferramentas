@@ -5,14 +5,28 @@ require('dotenv').config();
 
 const app = express();
 
+// Importação das rotas
+const ferramentaRoutes = require('./routes/ferramenta.routes');
+const usuarioRoutes = require('./routes/usuario.routes');
+const authRoutes = require('./routes/auth');
+
 // Middlewares
-app.use(cors({ origin: ['http://localhost:4200', 'https://frotend-m4m3.vercel.app'] }));
-app.use(express.json({ limit: '10mb' 
+app.use(cors({
+  origin: [
+    'http://localhost:4200',
+    'https://frotend-m4m3.vercel.app',
+    'https://controle-backend-uo34.onrender.com'
+  ],
+  credentials: true
 }));
 
+app.use(express.json({ limit: '10mb' }));
+
 // Rotas
-const ferramentaRoutes = require('./routes/ferramenta.routes');
 app.use('/ferramentas', ferramentaRoutes);
+app.use('/usuarios', usuarioRoutes); 
+app.use('/auth', authRoutes);
+
 
 // Conexão com o MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI, {

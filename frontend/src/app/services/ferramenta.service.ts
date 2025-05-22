@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class FerramentaService {
 
-  private url = 'https://controle-backend-uo34.onrender.com/ferramentas'; // ajuste quando o backend estiver online
+  private url = 'https://controle-backend-uo34.onrender.com/ferramentas'; 
 
   constructor(private http: HttpClient) {}
 

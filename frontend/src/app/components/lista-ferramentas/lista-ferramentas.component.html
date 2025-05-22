@@ -1,5 +1,13 @@
 <div class="container mt-5">
-  <h2 class="text-center mb-4">Lista de Ferramentas</h2>
+<div class="position-relative mb-3">
+  <button 
+    class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" 
+    (click)="logout()">
+    Sair
+  </button>
+</div>
+
+<h2 class="text-center mb-4">Lista de Ferramentas</h2>
 
   <!-- Carregando -->
 <div *ngIf="carregando" class="text-center my-5">
@@ -86,5 +94,4 @@
     </div>
   </div>
 </div>
-
 </div>

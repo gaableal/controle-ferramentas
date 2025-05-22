@@ -8,4 +8,3 @@ const ferramentaSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Ferramenta', ferramentaSchema);
 
-//Exemplo

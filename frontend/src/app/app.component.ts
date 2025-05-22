@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router'; 
+import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -12,12 +11,13 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  currentRoute = '';
+  isLoginOrCadastro = false;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.currentRoute = event.url;
+        this.isLoginOrCadastro =
+          event.url === '/login' || event.url === '/cadastrar-usuario';
       }
     });
   }

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Ferramenta } from '../../models/ferramenta.model';
 import { FerramentaService } from '../../services/ferramenta.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-ferramenta',
@@ -20,7 +22,10 @@ export class CadastroFerramentaComponent {
 
   sucesso = false;
 
-  constructor(private ferramentaService: FerramentaService) {}
+  constructor(private ferramentaService: FerramentaService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   cadastrar() {
     this.ferramentaService.cadastrarFerramenta(this.ferramenta).subscribe({
@@ -40,15 +45,20 @@ export class CadastroFerramentaComponent {
     });
   }
 
-  onFileSelected(event: any) {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.ferramenta.imagem = reader.result as string;
-      console.log('Imagem convertida:', this.ferramenta.imagem); // debug
-    };
-    reader.readAsDataURL(file);
-  }
+  logout(): void {
+  this.auth.sair();
+  this.router.navigate(['/login']);
 }
+
+    onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.ferramenta.imagem = reader.result as string;
+        console.log('Imagem convertida:', this.ferramenta.imagem); // debug
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 }

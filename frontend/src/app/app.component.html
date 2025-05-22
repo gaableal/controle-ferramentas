@@ -1,34 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark px-4"
+  *ngIf="!isLoginOrCadastro"
+>
   <div class="container-fluid position-relative">
 
     <!-- Menu centralizado -->
-<!-- Menu centralizado -->
-<div class="w-100 d-flex justify-content-center">
-  <a
-    [routerLink]="'/lista'"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
-    [ngClass]="{
-      'nav-link mx-3 text-white': true,
-      'text-warning fw-bold': currentRoute === '/lista'
-    }"
-  >
-    Lista
-  </a>
-  <span class="text-white">|</span>
-  <a
-    [routerLink]="'/cadastro'"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: true }"
-    [ngClass]="{
-      'nav-link mx-3 text-white': true,
-      'text-warning fw-bold': currentRoute === '/cadastro'
-    }"
-  >
-    Cadastrar
-  </a>
-</div>
-
+    <div class="w-100 d-flex justify-content-center">
+      <a
+        [routerLink]="'/lista'"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [ngClass]="{
+          'nav-link mx-3 text-white': true,
+          'text-warning fw-bold': router.url === '/lista'
+        }"
+      >
+        Lista
+      </a>
+      <span class="text-white">|</span>
+      <a
+        [routerLink]="'/cadastro'"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [ngClass]="{
+          'nav-link mx-3 text-white': true,
+          'text-warning fw-bold': router.url === '/cadastro'
+        }"
+      >
+        Cadastrar
+      </a>
+    </div>
 
     <!-- Logo da WEG com link fixo no canto direito -->
     <a

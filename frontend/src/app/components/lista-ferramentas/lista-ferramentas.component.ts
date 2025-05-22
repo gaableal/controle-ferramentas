@@ -41,6 +41,11 @@ export class ListaFerramentasComponent implements OnInit {
     );
   }
 
+  logout() {
+  localStorage.removeItem('token');
+  window.location.href = '/login';
+}
+
   excluir(id: string | undefined): void {
     if (!id) return;
 
@@ -74,8 +79,8 @@ abrirImagem(imagem: string | undefined) {
   }
 }
 
-fecharImagem() {
-  this.mostrarImagem = false;
-  this.imagemSelecionada = '';
-}
+  fecharImagem() {
+    this.mostrarImagem = false;
+    this.imagemSelecionada = '';
+  }
 }
