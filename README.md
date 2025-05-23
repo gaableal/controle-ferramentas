@@ -1,59 +1,94 @@
-# Frontend
+# 🛠️ Sistema de Controle de Ferramentas
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+Este projeto é um sistema web desenvolvido para controle de ferramentas, permitindo o cadastro, consulta, edição e remoção de ferramentas, além de controle de usuários com autenticação.
 
-## Development server
+## 📚 Tecnologias Utilizadas
 
-To start a local development server, run:
+- ✔️ **Frontend:** Angular (Standalone), TypeScript, HTML, SCSS, Bootstrap
+- ✔️ **Backend:** Node.js, Express.js
+- ✔️ **Banco de Dados:** MongoDB Atlas (Nuvem)
+- ✔️ **Autenticação:** JWT (JSON Web Token)
+- ✔️ **Deploy:** 
+  - Frontend: [Vercel](https://vercel.com/)
+  - Backend: [Render](https://render.com/)
 
+## 🔐 Funcionalidades
+
+- 🔑 Login e autenticação de usuários
+- 🧑‍💼 Cadastro de usuários com senha criptografada
+- 🛠️ Cadastro de ferramentas com nome, quantidade e imagem
+- 📄 Listagem de ferramentas
+- ✏️ Edição da quantidade de ferramentas
+- ❌ Exclusão de ferramentas
+- 🔒 Rotas protegidas, acessíveis apenas após login
+
+## 🚀 Como Executar Localmente
+
+### 🔧 Backend
+
+1. Clone este repositório do backend:
+```bash
+git clone https://github.com/seu-usuario/backend.git
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Configure o arquivo `.env` com as informações:
+```
+MONGO_URI= sua-string-de-conexao-do-mongodb
+JWT_SECRET= sua-chave-secreta
+```
+
+4. Execute o servidor:
+```bash
+node server.js
+```
+
+---
+
+### 💻 Frontend
+
+1. Clone este repositório do frontend:
+```bash
+git clone https://github.com/seu-usuario/frontend.git
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o frontend:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Acesse no navegador:
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🌐 Deploy (Produção)
 
-## Building
+- 🔗 **Backend:** https://controle-backend-uo34.onrender.com
+- 🔗 **Frontend:** https://frotend-m4m3.vercel.app
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🎯 Melhorias Futuras
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- 🔒 Reset de senha
+- 📦 Upload de imagens para armazenamento externo
+- 📊 Relatórios de uso de ferramentas
+- ✅ Logout e expiração automática do token
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🏆 Observação
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este sistema foi desenvolvido para uso interno na empresa, permitindo controle eficiente de ferramentas utilizadas no setor, com acesso restrito a usuários cadastrados.
